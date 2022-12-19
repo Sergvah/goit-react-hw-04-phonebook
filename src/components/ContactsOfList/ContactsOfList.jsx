@@ -4,17 +4,19 @@ import PropTypes from 'prop-types';
 
 const ContactsOfList = ({ contacts, onDeleteCard }) => {
   return (
-    <ul className={css.list}>
-      {contacts.map(({ id, name, number }) => (
-        <ContactItem
-          key={id}
-          id={id}
-          name={name}
-          number={number}
-          onDeleteCard={onDeleteCard}
-        />
-      ))}
-    </ul>
+    contacts.length !== 0 && (
+      <ul className={css.list}>
+        {contacts.map(({ id, name, number }) => (
+          <ContactItem
+            key={id}
+            id={id}
+            name={name}
+            number={number}
+            onDeleteCard={onDeleteCard}
+          />
+        ))}
+      </ul>
+    )
   );
 };
 export default ContactsOfList;

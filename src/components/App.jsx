@@ -62,7 +62,6 @@ const App = () => {
       <ContactsOfList
         contacts={getVisibleContacts()}
         onDeleteCard={deleteCard}
-        items={contacts}
       />
     </div>
   );

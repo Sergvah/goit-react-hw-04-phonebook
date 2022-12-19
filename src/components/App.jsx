@@ -7,9 +7,9 @@ import { nanoid } from 'nanoid';
 const LS_KEY = 'reader_contacts';
 
 const App = () => {
-  const [contacts, setContacts] = useState(
-    JSON.parse(window.localStorage.getItem(LS_KEY)) ?? []
-  );
+  const [contacts, setContacts] = useState(() => {
+    return JSON.parse(window.localStorage.getItem(LS_KEY)) ?? [];
+  });
   const [filter, setFilter] = useState('');
 
   useEffect(() => {
